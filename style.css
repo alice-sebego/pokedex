@@ -37,10 +37,6 @@ input{
     border-radius: .5em;
 }
 
-input[type = search]{
-    color: #333;
-}
-
 main{
     width: 75%;
     margin: 5vh auto;
@@ -50,7 +46,8 @@ main{
 }
 
 .card{
-    border: 1px solid white;
     width: 100%;
     height: 25vh;
+    border: 1px solid white;
+    border-radius: .4em;
 }
