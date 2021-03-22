@@ -1,4 +1,3 @@
-
 // DOM's elements
 const $main = document.querySelector("main");
 let $searchValue = document.querySelector("#pokemon").value;
@@ -14,30 +13,29 @@ let allPokemon = [];
 // Search all pokemons from api
 
 const searchAllPokemon = async () => {
-        try {
-            const response = await fetch(urlAllPokemon);
+    try {
+        const response = await fetch(urlAllPokemon);
+        
+        if(response.ok){
+
+            let responseJson = await response.json();
             
-            if(response.ok){
+            allPokemon.push(responseJson.results);
+            
+            for(let i = 1; i < allPokemon[0].length; i ++){
 
-                let responseJson = await response.json();
+                //console.log(allPokemon[0][i].name);
                 
-                allPokemon.push(responseJson.results);
+                let namePokemon = allPokemon[0][i].name; // add this on urlEachPokemon
                 
-                for(let i = 1; i < allPokemon[0].length; i ++){
+                fetchInfoEachPokemon(namePokemon);
 
-                    //console.log(allPokemon[0][i].name);
-                    
-                    let namePokemon = allPokemon[0][i].name; // add this on urlEachPokemon
-                    
-                    fetchInfoEachPokemon(namePokemon);
-
-                }
             }
-
-        } catch(error) {
-            console.log("error :" + error);
         }
-    
+
+    } catch(error) {
+        console.log("error :" + error);
+    }
 
 }
 
@@ -57,7 +55,7 @@ const fetchInfoEachPokemon = async (pokemon) => {
             let idPokemon = dataJson.id;
             const $card = document.createElement("div");
             $card.classList.add("card");
-            $card.innerHTML = `<img src="${picture}" alt="${name}"/><h2>${name}</h2><p>Id : ${idPokemon}</p>`;
+            $card.innerHTML = `<img src="${picture}" alt="${name}"/><h2>${name}</h2><p>Id #${idPokemon}</p>`;
             $main.appendChild($card);
 
         } 
@@ -67,4 +65,7 @@ const fetchInfoEachPokemon = async (pokemon) => {
     }
 }
 
-// Search with form for a specific pokemon among the results 
+// Search with form for a specific pokemon among the results
+
+// Add background-colors dependind types of pokemon 
+// https://pokeapi.co/docs/v2#pokemon
