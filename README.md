@@ -1,2 +1,13 @@
 # pokedex
-Create an interface listing the pokemons from PokeApi
+Create an interface listing the pokemons from PokeApi 
+
+/ Work In progress /
+
+## What is this ?
+It's a mini-project in order to improve with vanilla JS, vanilla CSS & API's using
+
+To do this, I use [PokéAPI](https://pokeapi.co/ "Go to the Pokeapi's website") for this project
+
+## Languages and Tools used :
+* HTML5, CSS3, JavaScript
+* API Rest, JSON
