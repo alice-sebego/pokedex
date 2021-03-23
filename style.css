@@ -89,10 +89,6 @@ h2{
         margin-left: 3vw;
     }
 
-    label{
-        justify-content: center;
-    }
-
     main{
         grid-template-columns: 1fr 1fr 1fr;
     }

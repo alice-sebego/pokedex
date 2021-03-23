@@ -3,7 +3,7 @@ const $main = document.querySelector("main");
 const $inputForm = document.querySelector("#pokemon");
 let $searchValue = document.querySelector("#pokemon").value;
 let inputValue = $searchValue.toLowerCase();
-const $submit = document.querySelector("form");
+const $form = document.querySelector("form");
 
 const urlEachPokemon = "https://pokeapi.co/api/v2/pokemon/";
 const endpointSearch = urlEachPokemon + inputValue;
@@ -23,13 +23,19 @@ const searchAllPokemon = async () => {
             
             allPokemon.push(responseJson.results);
             
-            
+            // add datalist
+            let $datalist = document.createElement("datalist");
+            $datalist.setAttribute("id", "pokemon-name");
+            $form.appendChild($datalist);
+
             for(let i = 1; i < allPokemon[0].length; i ++){
 
-                //console.log(allPokemon[0][i].name);
-                
                 let namePokemon = allPokemon[0][i].name; // add this on urlEachPokemon
-            
+                
+                let $optionDatalist = document.createElement("option");
+                $optionDatalist.value = namePokemon;
+                $datalist.appendChild($optionDatalist);
+                
                 fetchInfoEachPokemon(namePokemon);
 
             }
@@ -52,10 +58,11 @@ const fetchInfoEachPokemon = async (pokemon) => {
         if(data.ok){
 
             let dataJson = await data.json();
-            //console.log(dataJson);
+
             let name = dataJson.name;
             let picture = dataJson.sprites.front_default;
             let idPokemon = dataJson.id;
+
             const $card = document.createElement("div");
             $card.classList.add("card");
             $card.innerHTML = `<img src="${picture}" alt="${name}"/><h2>${name}</h2><p>Id #${idPokemon}</p>`;
