@@ -1,5 +1,6 @@
 // DOM's elements
 const $main = document.querySelector("main");
+const $inputForm = document.querySelector("#pokemon");
 let $searchValue = document.querySelector("#pokemon").value;
 let inputValue = $searchValue.toLowerCase();
 const $submit = document.querySelector("form");
@@ -22,12 +23,13 @@ const searchAllPokemon = async () => {
             
             allPokemon.push(responseJson.results);
             
+            
             for(let i = 1; i < allPokemon[0].length; i ++){
 
                 //console.log(allPokemon[0][i].name);
                 
                 let namePokemon = allPokemon[0][i].name; // add this on urlEachPokemon
-                
+            
                 fetchInfoEachPokemon(namePokemon);
 
             }
@@ -50,6 +52,7 @@ const fetchInfoEachPokemon = async (pokemon) => {
         if(data.ok){
 
             let dataJson = await data.json();
+            //console.log(dataJson);
             let name = dataJson.name;
             let picture = dataJson.sprites.front_default;
             let idPokemon = dataJson.id;
@@ -66,6 +69,8 @@ const fetchInfoEachPokemon = async (pokemon) => {
 }
 
 // Search with form for a specific pokemon among the results
+// https://developer.mozilla.org/fr/docs/Web/HTML/Element/datalist
+
 
 // Add background-colors dependind types of pokemon 
 // https://pokeapi.co/docs/v2#pokemon
