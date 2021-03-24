@@ -6,14 +6,14 @@ let inputValue = $searchValue.toLowerCase();
 const $form = document.querySelector("form");
 
 const urlEachPokemon = "https://pokeapi.co/api/v2/pokemon/";
-const endpointSearch = urlEachPokemon + inputValue;
+//const endpointSearch = urlEachPokemon + inputValue;
  
 const urlAllPokemon = "https://pokeapi.co/api/v2/pokemon?limit=101";
 let allPokemon = [];
 
 // Search all pokemons from api
 
-const searchAllPokemon = async () => {
+const searchAllPokemon = async (arr) => {
     try {
         const response = await fetch(urlAllPokemon);
         
@@ -21,16 +21,16 @@ const searchAllPokemon = async () => {
 
             let responseJson = await response.json();
             
-            allPokemon.push(responseJson.results);
+            arr.push(responseJson.results);
             
             // add datalist
             let $datalist = document.createElement("datalist");
             $datalist.setAttribute("id", "pokemon-name");
             $form.appendChild($datalist);
 
-            for(let i = 1; i < allPokemon[0].length; i ++){
+            for(let i = 0; i < arr[0].length; i ++){
 
-                let namePokemon = allPokemon[0][i].name; // add this on urlEachPokemon
+                let namePokemon = arr[0][i].name; // add this on urlEachPokemon
                 
                 let $optionDatalist = document.createElement("option");
                 $optionDatalist.value = namePokemon;
@@ -47,7 +47,7 @@ const searchAllPokemon = async () => {
 
 }
 
-searchAllPokemon();
+searchAllPokemon(allPokemon);
 
 // Get all informations about each pokemon
 
@@ -76,8 +76,29 @@ const fetchInfoEachPokemon = async (pokemon) => {
 }
 
 // Search with form for a specific pokemon among the results
-// https://developer.mozilla.org/fr/docs/Web/HTML/Element/datalist
 
+//console.log(allPokemon);
+
+const search = () =>{
+    
+    let $cards = document.querySelectorAll(".card");
+    let $cardsName = document.querySelectorAll(".card > h2");
+    let h2Value = [];
+    console.log(inputValue);
+    for(let i = 0; i < $cards.length; i++){
+        
+        
+        h2Value.push($cardsName[i].textContent);
+        console.log(h2Value)
+    
+        if(h2Value.includes(inputValue)){
+        $cards[i].style.display = "unset";
+        } else{
+        $cards[i].style.display = "none";
+        }
+    }
+}
+$inputForm.addEventListener("input", search);
 
 // Add background-colors dependind types of pokemon 
 // https://pokeapi.co/docs/v2#pokemon
