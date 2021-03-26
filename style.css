@@ -87,7 +87,7 @@ h2{
         grid-template-columns: 1fr 1fr 1fr;
     }
 
-    .card >h2{
+    .card > h2{
         font-size: 1.2em;
     }
 

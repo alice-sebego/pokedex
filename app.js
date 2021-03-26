@@ -36,6 +36,8 @@ const searchAllPokemon = async (arr) => {
             for(let i = 0; i < arr[0].length; i ++){
 
                 namePokemon = arr[0][i].name; // add this on urlEachPokemon
+                //let types = namePokemon.types[0].type.name;
+                //console.log(types)
                 cardsName.push(namePokemon);
                 
                 let $optionDatalist = document.createElement("option");
@@ -71,6 +73,8 @@ const fetchInfoEachPokemon = async (pokemon) => {
             let name = dataJson.name;
             let picture = dataJson.sprites.front_default;
             let idPokemon = dataJson.id;
+            let typePokemon = dataJson.types[0].type.name;
+            console.log(typePokemon);
 
             const $card = document.createElement("div");
             $card.classList.add("card");
@@ -101,5 +105,23 @@ $inputForm.addEventListener("input", e =>{
           
 });
 
-// Add background-colors dependind types of pokemon 
+// Add background-colors depending types of pokemon 
 // https://pokeapi.co/docs/v2#pokemon
+
+/* List of types of pokemon
+grass
+fire
+water
+bug
+normal
+poison
+electric
+ground
+fairy
+fighting
+psychic
+water
+rock
+ghost
+
+*/
