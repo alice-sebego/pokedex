@@ -36,8 +36,7 @@ const searchAllPokemon = async (arr) => {
             for(let i = 0; i < arr[0].length; i ++){
 
                 namePokemon = arr[0][i].name; // add this on urlEachPokemon
-                //let types = namePokemon.types[0].type.name;
-                //console.log(types)
+                
                 cardsName.push(namePokemon);
                 
                 let $optionDatalist = document.createElement("option");
@@ -74,11 +73,60 @@ const fetchInfoEachPokemon = async (pokemon) => {
             let picture = dataJson.sprites.front_default;
             let idPokemon = dataJson.id;
             let typePokemon = dataJson.types[0].type.name;
-            console.log(typePokemon);
 
             const $card = document.createElement("div");
             $card.classList.add("card");
             $card.innerHTML = `<img src="${picture}" alt="${name}"/><h2>${name}</h2><p>Id #${idPokemon}</p>`;
+            switch (typePokemon){
+                case "grass":
+                    $card.style.backgroundColor = "#78c850";
+                    break;
+                case "fire":
+                    $card.style.backgroundColor = "#F58271";
+                    break;
+                case "water":
+                    $card.style.backgroundColor = "#6390F0";
+                    break;
+                case "bug":
+                    $card.style.backgroundColor = "#B3F594";
+                    break;
+                case "normal":
+                    $card.style.backgroundColor = "#D9D5D8";
+                    break;
+                case "poison":
+                    $card.style.backgroundColor = "#966DA3";
+                    break;
+                case "electric":
+                    $card.style.backgroundColor = "#F7D02C";
+                    break;
+                case "ground":
+                    $card.style.backgroundColor = "#E2BF65";
+                    break;
+                case "fairy":
+                    $card.style.backgroundColor = "#D685AD";
+                    break;
+                case "figthing":
+                    $card.style.backgroundColor = "#C25956";
+                    break;
+                case "psychic":
+                    $card.style.backgroundColor = "#F95587";
+                    break;
+                case "rock":
+                    $card.style.backgroundColor = "#B6A136";
+                    break;
+                case "ghost":
+                    $card.style.backgroundColor = "#735797";
+                    break;
+                case "dragon":
+                    $card.style.backgroundColor = "#6F35FC";
+                    break;
+                case "ice":
+                    $card.style.backgroundColor = "#96D9D6";
+                default:
+                    $card.style.backgroundColor = "rgba(0, 0, 0, 0.8)"
+                    break;
+            }
+
             $main.appendChild($card);
 
         } 
@@ -97,7 +145,7 @@ $inputForm.addEventListener("input", e =>{
     const $cards = cardsName.filter(pokemon =>
         pokemon.toLowerCase().includes(element)
     );
-    //console.log($cards)
+
     $cards.forEach(card =>{
         $main.innerHTML = "";
         fetchInfoEachPokemon(card)
@@ -105,23 +153,5 @@ $inputForm.addEventListener("input", e =>{
           
 });
 
-// Add background-colors depending types of pokemon 
+ 
 // https://pokeapi.co/docs/v2#pokemon
-
-/* List of types of pokemon
-grass
-fire
-water
-bug
-normal
-poison
-electric
-ground
-fairy
-fighting
-psychic
-water
-rock
-ghost
-
-*/

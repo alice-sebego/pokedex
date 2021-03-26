@@ -52,7 +52,6 @@ main{
     border-top: 1px solid rgb(138, 135, 135);
     border-right: 1px solid #aaa;
     border-radius: .4em;
-    background-color: rgba(0, 0, 0, 0.8);
     box-shadow: -.2em .2em .3em rgba(0, 0, 0, 0.5);
 }
 
@@ -60,6 +59,7 @@ main{
 .card > p{
     text-align: center;
     color: white;
+    text-shadow: -.02em .06em .2em black;
 }
 
 .card > img{
