@@ -9,12 +9,15 @@ const $form = document.querySelector("form");
 const urlEachPokemon = "https://pokeapi.co/api/v2/pokemon/";
 const urlAllPokemon = "https://pokeapi.co/api/v2/pokemon?limit=101";
 
+// Array where we store name or datas of each pokemon
 let allPokemon = [];
 let namePokemon;
 let cardsName = [];
 
-// Search all pokemons from api
-
+/**
+ * Search all pokemons from api
+ * @param {array} arr 
+ */
 const searchAllPokemon = async (arr) => {
     try {
         const response = await fetch(urlAllPokemon);
@@ -33,7 +36,6 @@ const searchAllPokemon = async (arr) => {
             for(let i = 0; i < arr[0].length; i ++){
 
                 namePokemon = arr[0][i].name; // add this on urlEachPokemon
-                //console.log(namePokemon)
                 cardsName.push(namePokemon);
                 
                 let $optionDatalist = document.createElement("option");
@@ -51,10 +53,13 @@ const searchAllPokemon = async (arr) => {
 
 }
 
+// Call the fucntion searchAllPokemon when DOM is loaded
 document.addEventListener("DOMContentLoaded", searchAllPokemon(allPokemon))
 
-// Get all informations about each pokemon
-
+/**
+ * Get all informations about each pokemon
+ * @param {string} pokemon 
+ */
 const fetchInfoEachPokemon = async (pokemon) => {
     try{
         const data = await fetch(urlEachPokemon + pokemon);
