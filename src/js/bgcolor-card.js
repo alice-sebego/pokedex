@@ -1,3 +1,8 @@
+/**
+ * Set background-color for each card depending his type
+ * @param {string} type 
+ * @param {HTMLDivElement} card 
+ */
 const setBackgroundColor = (type, card) => {
     switch (type){
         case "grass":

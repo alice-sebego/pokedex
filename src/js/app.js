@@ -54,7 +54,7 @@ const searchAllPokemon = async (arr) => {
 
 }
 
-// Call the fucntion searchAllPokemon when DOM is loaded
+// Call the function searchAllPokemon when DOM is loaded
 document.addEventListener("DOMContentLoaded", searchAllPokemon(allPokemon))
 
 /**
