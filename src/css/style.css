@@ -50,6 +50,8 @@ main{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 1em;
+    grid-template-areas:
+    "a a a a";
 }
 
 .card{
@@ -94,6 +96,17 @@ footer > p > a:hover,
 footer > p > a:visited{
     color: white;
     cursor: pointer;   
+}
+
+#error{
+    grid-area: a;
+    color: white;
+    text-align: center;
+}
+
+#error > img{
+    display: block;
+    margin: 5vh auto;
 }
 
 @media (max-width: 700px){

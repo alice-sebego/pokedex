@@ -1,4 +1,5 @@
 import {setBackgroundColor} from './bgcolor-card.js';
+import {setMsgError404} from './handle-error.js';
 
 // DOM's elements
 const $main = document.querySelector("main");
@@ -48,6 +49,10 @@ const searchAllPokemon = async (arr) => {
                 fetchInfoEachPokemon(namePokemon);
             })
 
+        } else {
+            
+        setMsgError404($main);
+
         }
 
     } catch(error) {
@@ -84,10 +89,16 @@ const fetchInfoEachPokemon = async (pokemon) => {
 
             $main.appendChild($card);
 
-        } 
+        } else {
+
+            setMsgError404($main);
+            
+        }
 
     } catch(error){
-        console.log("error :" + error)
+
+        console.log("error :" + error);
+
     }
 }
 
