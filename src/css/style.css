@@ -27,6 +27,13 @@ h1{
     letter-spacing: .02em;
 }
 
+hr{
+    width: 45%;
+    margin: 2vh auto;
+    border: 1px dashed #333;
+    box-shadow: 0 0.1em 0.4em rgba(138, 135, 135, 0.9);
+}
+
 label{
     color: white;
     font-size: 0.9em;
@@ -69,6 +76,24 @@ main{
 
 h2{
     text-transform: capitalize;
+}
+
+footer{
+    margin-top: 3vh;
+    padding: 3vh 3vw;
+    text-align: center;
+    color: white;
+    font-size: smaller;
+    letter-spacing: 0.05em;
+    line-height: 2em;
+    box-shadow: 0 -.2em .3em rgba(0, 0, 0, 0.2);
+}
+
+footer > p > a,
+footer > p > a:hover,
+footer > p > a:visited{
+    color: white;
+    cursor: pointer;   
 }
 
 @media (max-width: 700px){

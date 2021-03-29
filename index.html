@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ici, un side-project d'une développeuse front-end qui se consacre à JavaScript, avec pour thème un pokédex">
+    <!-- style and fonts -->
     <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- script js -->
     <script type="module" defer src="src/js/app.js"></script>
     <title>Document</title>
 </head>
 <body>
     <header>
         <h1>Mon pokédex</h1>
+        <hr>
         <form action="">
             <label for="pokemon">Trouvez un pokémon <input type="search" name="pokemon" id="pokemon" list="pokemon-name" placeholder="Rechercher un pokémon"></label>
         </form>
@@ -19,6 +24,8 @@
         
     </main>
     <footer>
+        <p><span id="year"></span> Pokedex | Side project which works with JavaScript & <a href="https://pokeapi.co" target="_blank" title="Go to PokeAPI's website">PokeAPI</a>'s data</p>
+        <p><i class="fab fa-github"></i> <a href="https://github.com/alice-sebego/pokedex" title="Get app's code on GitHub">See code of this app</a> - <i class="fab fa-twitter"></i> <a href="https://twitter.com/ComaMalice" target="_blank" title="Follow us on Twitter">Follow us on Twitter</a></p>
     </footer>    
 </body>
 </html>

@@ -4,8 +4,10 @@ import {setBackgroundColor} from './bgcolor-card.js';
 const $main = document.querySelector("main");
 const $inputForm = document.querySelector("#pokemon");
 const $form = document.querySelector("form");
+const $year = document.querySelector("#year");
 
 // URL & endpoints
+// Doc API : https://pokeapi.co/docs/v2#pokemon
 const urlEachPokemon = "https://pokeapi.co/api/v2/pokemon/";
 const urlAllPokemon = "https://pokeapi.co/api/v2/pokemon?limit=101";
 
@@ -106,5 +108,6 @@ $inputForm.addEventListener("input", e =>{
           
 });
 
- 
-// https://pokeapi.co/docs/v2#pokemon
+// Set current year on the footer
+let date = new Date(); 
+$year.innerHTML = `${date.getFullYear()}`;
