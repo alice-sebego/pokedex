@@ -33,9 +33,9 @@ const searchAllPokemon = async (arr) => {
             $datalist.setAttribute("id", "pokemon-name");
             $form.appendChild($datalist);
 
-            for(let i = 0; i < arr[0].length; i ++){
+            arr[0].forEach( element => {
 
-                namePokemon = arr[0][i].name; // add this on urlEachPokemon
+                namePokemon = element.name; 
                 
                 cardsName.push(namePokemon);
                 
@@ -44,8 +44,8 @@ const searchAllPokemon = async (arr) => {
                 $datalist.appendChild($optionDatalist);
                 
                 fetchInfoEachPokemon(namePokemon);
+            })
 
-            }
         }
 
     } catch(error) {
