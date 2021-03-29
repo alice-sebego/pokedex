@@ -9,6 +9,11 @@ const setMsgError404 = (elementHTML) => {
     elementHTML.appendChild(msgError);
 }
 
+/**
+ * Set a message when we have a error from api
+ * @param {HTMLElement} elementHTML 
+ * @param {string} errorDescription 
+ */
 const setMsgError = (elementHTML, errorDescription) => {
     const msgError = document.createElement("div");
     msgError.setAttribute("id", "error");
