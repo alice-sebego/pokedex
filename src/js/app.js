@@ -51,7 +51,7 @@ const searchAllPokemon = async (arr) => {
 
         } else {
             
-        setMsgError404($main);
+            modulesError.setMsgError404($main);
 
         }
 
@@ -99,7 +99,7 @@ const fetchInfoEachPokemon = async (pokemon) => {
     } catch(error){
 
         console.log("error :" + error);
-        setMsgError($main, error);
+        modulesError.setMsgError($main, error);
 
     }
 }
