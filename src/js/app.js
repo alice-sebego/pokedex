@@ -1,5 +1,5 @@
 import {setBackgroundColor} from './bgcolor-card.js';
-import {setMsgError404} from './handle-error.js';
+import * as modulesError from './handle-error.js';
 
 // DOM's elements
 const $main = document.querySelector("main");
@@ -57,6 +57,7 @@ const searchAllPokemon = async (arr) => {
 
     } catch(error) {
         console.log("error :" + error);
+        modulesError.setMsgError($main, error);
     }
 
 }
@@ -91,13 +92,14 @@ const fetchInfoEachPokemon = async (pokemon) => {
 
         } else {
 
-            setMsgError404($main);
-            
+            modulesError.setMsgError404($main);
+
         }
 
     } catch(error){
 
         console.log("error :" + error);
+        setMsgError($main, error);
 
     }
 }
