@@ -106,7 +106,7 @@ const fetchInfoEachPokemon = async (pokemon) => {
 
 // Search with form for a specific pokemon among the results
 
-$inputForm.addEventListener("input", e =>{
+$inputForm.addEventListener("input", e => {
     
     const element = e.target.value.toLowerCase();
     
@@ -114,7 +114,7 @@ $inputForm.addEventListener("input", e =>{
         pokemon.toLowerCase().includes(element)
     );
 
-    $cards.forEach(card =>{
+    $cards.forEach(card => {
         $main.innerHTML = "";
         fetchInfoEachPokemon(card)
     });
