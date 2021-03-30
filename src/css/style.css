@@ -50,8 +50,6 @@ main{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 1em;
-    grid-template-areas:
-    "a a a a";
 }
 
 .card{
@@ -98,15 +96,18 @@ footer > p > a:visited{
     cursor: pointer;   
 }
 
+i{ font-size: larger; }
+
 #error{
-    grid-area: a;
+    grid-column: 1/5;
     color: white;
     text-align: center;
 }
 
 #error > img{
-    display: block;
+    display: grid;
     margin: 5vh auto;
+    width: 75%;
 }
 
 @media (max-width: 700px){
@@ -145,6 +146,7 @@ footer > p > a:visited{
     input[type="search"]{
         margin-left: 0;
     }
+
 }
 
 @media (max-width: 300px){
