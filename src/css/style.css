@@ -44,6 +44,45 @@ input{
     border-radius: .5em;
 }
 
+#loader{
+    position: absolute;
+    top: 25vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20em;
+    height: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.points{
+    margin: 0 .5em;
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 50%;
+    background-color: white;
+    animation: up 0.3s alternate infinite;
+}
+
+.points:nth-child(1){
+    animation-delay: 0.1s;
+}
+
+.points:nth-child(2){
+    animation-delay: 0.2s;
+}
+
+.points:nth-child(3){
+    animation-delay: 0.3s;
+}
+
+@keyframes up{
+    100%{
+        transform: translateY(-0.3em);
+    }
+}
+
 main{
     width: 75%;
     margin: 5vh auto;

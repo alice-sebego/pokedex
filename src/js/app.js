@@ -6,6 +6,7 @@ const $main = document.querySelector("main");
 const $inputForm = document.querySelector("#pokemon");
 const $form = document.querySelector("form");
 const $year = document.querySelector("#year");
+const $loader = document.querySelector("#loader");
 
 // URL & endpoints
 // Doc API : https://pokeapi.co/docs/v2#pokemon
@@ -81,7 +82,7 @@ const fetchInfoEachPokemon = async (pokemon) => {
             let picture = dataJson.sprites.front_default;
             let idPokemon = dataJson.id;
             let typePokemon = dataJson.types[0].type.name;
-
+   
             const $card = document.createElement("div");
             $card.classList.add("card");
             $card.innerHTML = `<img src="${picture}" alt="${name}"/><h2>${name}</h2><p>Id #${idPokemon}</p>`;
@@ -89,6 +90,8 @@ const fetchInfoEachPokemon = async (pokemon) => {
             setBackgroundColor(typePokemon, $card)
 
             $main.appendChild($card);
+
+            $loader.style.display = "none";
 
         } else {
 

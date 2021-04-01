@@ -9601,7 +9601,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 var $main = document.querySelector("main");
 var $inputForm = document.querySelector("#pokemon");
 var $form = document.querySelector("form");
-var $year = document.querySelector("#year"); // URL & endpoints
+var $year = document.querySelector("#year");
+var $loader = document.querySelector("#loader"); // URL & endpoints
 // Doc API : https://pokeapi.co/docs/v2#pokemon
 
 var urlEachPokemon = "https://pokeapi.co/api/v2/pokemon/";
@@ -9703,7 +9704,7 @@ var fetchInfoEachPokemon = /*#__PURE__*/function () {
             data = _context2.sent;
 
             if (!data.ok) {
-              _context2.next = 19;
+              _context2.next = 20;
               break;
             }
 
@@ -9721,28 +9722,29 @@ var fetchInfoEachPokemon = /*#__PURE__*/function () {
             $card.innerHTML = "<img src=\"".concat(picture, "\" alt=\"").concat(name, "\"/><h2>").concat(name, "</h2><p>Id #").concat(idPokemon, "</p>");
             (0,_bgcolor_card_js__WEBPACK_IMPORTED_MODULE_0__.setBackgroundColor)(typePokemon, $card);
             $main.appendChild($card);
-            _context2.next = 20;
+            $loader.style.display = "none";
+            _context2.next = 21;
             break;
-
-          case 19:
-            _handle_error_js__WEBPACK_IMPORTED_MODULE_1__.setMsgError404($main);
 
           case 20:
-            _context2.next = 26;
+            _handle_error_js__WEBPACK_IMPORTED_MODULE_1__.setMsgError404($main);
+
+          case 21:
+            _context2.next = 27;
             break;
 
-          case 22:
-            _context2.prev = 22;
+          case 23:
+            _context2.prev = 23;
             _context2.t0 = _context2["catch"](0);
             console.log("error :" + _context2.t0);
             _handle_error_js__WEBPACK_IMPORTED_MODULE_1__.setMsgError($main, _context2.t0);
 
-          case 26:
+          case 27:
           case "end":
             return _context2.stop();
         }
       }
-    }, _callee2, null, [[0, 22]]);
+    }, _callee2, null, [[0, 23]]);
   }));
 
   return function fetchInfoEachPokemon(_x2) {
