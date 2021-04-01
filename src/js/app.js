@@ -54,11 +54,15 @@ const searchAllPokemon = async (arr) => {
             
             modulesError.setMsgError404($main);
 
+            $loader.style.display = "none";
+
         }
 
     } catch(error) {
-        console.log("error :" + error);
+        
         modulesError.setMsgError($main, error);
+
+        $loader.style.display = "none";
     }
 
 }
@@ -97,12 +101,15 @@ const fetchInfoEachPokemon = async (pokemon) => {
 
             modulesError.setMsgError404($main);
 
+            $loader.style.display = "none";
+
         }
 
     } catch(error){
 
-        console.log("error :" + error);
         modulesError.setMsgError($main, error);
+
+        $loader.style.display = "none";
 
     }
 }

@@ -9653,28 +9653,29 @@ var searchAllPokemon = /*#__PURE__*/function () {
               $datalist.appendChild($optionDatalist);
               fetchInfoEachPokemon(namePokemon);
             });
-            _context.next = 16;
+            _context.next = 17;
             break;
 
           case 15:
             _handle_error_js__WEBPACK_IMPORTED_MODULE_1__.setMsgError404($main);
+            $loader.style.display = "none";
 
-          case 16:
-            _context.next = 22;
+          case 17:
+            _context.next = 23;
             break;
 
-          case 18:
-            _context.prev = 18;
+          case 19:
+            _context.prev = 19;
             _context.t0 = _context["catch"](0);
-            console.log("error :" + _context.t0);
             _handle_error_js__WEBPACK_IMPORTED_MODULE_1__.setMsgError($main, _context.t0);
+            $loader.style.display = "none";
 
-          case 22:
+          case 23:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[0, 18]]);
+    }, _callee, null, [[0, 19]]);
   }));
 
   return function searchAllPokemon(_x) {
@@ -9723,28 +9724,29 @@ var fetchInfoEachPokemon = /*#__PURE__*/function () {
             (0,_bgcolor_card_js__WEBPACK_IMPORTED_MODULE_0__.setBackgroundColor)(typePokemon, $card);
             $main.appendChild($card);
             $loader.style.display = "none";
-            _context2.next = 21;
+            _context2.next = 22;
             break;
 
           case 20:
             _handle_error_js__WEBPACK_IMPORTED_MODULE_1__.setMsgError404($main);
+            $loader.style.display = "none";
 
-          case 21:
-            _context2.next = 27;
+          case 22:
+            _context2.next = 28;
             break;
 
-          case 23:
-            _context2.prev = 23;
+          case 24:
+            _context2.prev = 24;
             _context2.t0 = _context2["catch"](0);
-            console.log("error :" + _context2.t0);
             _handle_error_js__WEBPACK_IMPORTED_MODULE_1__.setMsgError($main, _context2.t0);
+            $loader.style.display = "none";
 
-          case 27:
+          case 28:
           case "end":
             return _context2.stop();
         }
       }
-    }, _callee2, null, [[0, 23]]);
+    }, _callee2, null, [[0, 24]]);
   }));
 
   return function fetchInfoEachPokemon(_x2) {
